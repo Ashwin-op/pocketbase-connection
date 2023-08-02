@@ -19,3 +19,7 @@ pb_url = "http://127.0.0.1:8090"
 4. Download the Pocketbase Executable from [here](https://github.com/pocketbase/pocketbase/releases) and run it.
 5. Run `poetry run streamlit run app.py` in the root directory of this repo.
 6. Enjoy!
+
+## Demo
+
+You can see a demo of this app [here](https://pocketbase-connection.streamlit.app/).

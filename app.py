@@ -31,8 +31,8 @@ def login():
     st.title("Login")
 
     with st.form("login_form"):
-        username = st.text_input("Username")
-        password = st.text_input("Password", type="password")
+        username = st.text_input("Username", value="firstuser@sample.email")
+        password = st.text_input("Password", type="password", value="firstuser")
         if st.form_submit_button("Login"):
             try:
                 if not conn.is_logged_in():
