@@ -4,7 +4,7 @@ from pocketbase_connection import PocketBaseConnection
 
 
 def get_conn():
-    return st.experimental_connection("pocketbase", type=PocketBaseConnection)
+    return st.connection("pocketbase", type=PocketBaseConnection)
 
 
 def manage_state():
@@ -19,7 +19,7 @@ def manage_state():
 
 def set_page(page):
     st.session_state.page = page
-    st.experimental_rerun()
+    st.rerun()
 
 
 def login():
@@ -56,7 +56,7 @@ def todos():
 
     col1, col2 = st.columns([1, 7])
     if col1.button("Refresh"):
-        st.experimental_rerun()
+        st.rerun()
     if col2.button("Logout"):
         conn.logout()
         set_page("login")
@@ -79,7 +79,7 @@ def todos():
             conn.create(
                 "todos", body_params={"content": content, "user": conn.user().id}
             )
-            st.experimental_rerun()
+            st.rerun()
         except Exception as e:
             st.error(f"Failed to create todo: {e}")
 
@@ -92,7 +92,7 @@ def todo(item):
             try:
                 conn = get_conn()
                 conn.delete("todos", item.id)
-                st.experimental_rerun()
+                st.rerun()
             except Exception as e:
                 st.error(f"Failed to delete todo: {e}")
 

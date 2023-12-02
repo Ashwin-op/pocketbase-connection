@@ -5,11 +5,11 @@ from pocketbase.models.record import Record
 from pocketbase.models.utils import BaseModel
 from pocketbase.models.utils.list_result import ListResult
 from pocketbase.services.record_service import RecordAuthResponse
-from streamlit.connections import ExperimentalBaseConnection
+from streamlit.connections import BaseConnection
 from streamlit.runtime.caching import cache_data
 
 
-class PocketBaseConnection(ExperimentalBaseConnection[Client]):
+class PocketBaseConnection(BaseConnection[Client]):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._client = self._connect(**kwargs)
@@ -56,12 +56,12 @@ class PocketBaseConnection(ExperimentalBaseConnection[Client]):
         return self._client
 
     def auth_with_password(
-        self,
-        collection_id_or_name="users",
-        username_or_email="",
-        password="",
-        body_params={},
-        query_params={},
+            self,
+            collection_id_or_name="users",
+            username_or_email="",
+            password="",
+            body_params={},
+            query_params={},
     ) -> RecordAuthResponse:
         """
         Authenticate with PocketBase using a username and password.
@@ -108,7 +108,7 @@ class PocketBaseConnection(ExperimentalBaseConnection[Client]):
         return self.cursor().auth_store.model
 
     def get_list(
-        self, collection_id_or_name, page=1, per_page=30, query_params={}, ttl=0
+            self, collection_id_or_name, page=1, per_page=30, query_params={}, ttl=0
     ) -> ListResult:
         """
         Get a list of records from a collection.
@@ -140,7 +140,7 @@ class PocketBaseConnection(ExperimentalBaseConnection[Client]):
         return _get_list(collection_id_or_name, page, per_page, query_params)
 
     def get_one(
-        self, collection_id_or_name, record_id, query_params={}, ttl=0
+            self, collection_id_or_name, record_id, query_params={}, ttl=0
     ) -> BaseModel:
         """
         Get a single record from a collection.
@@ -170,7 +170,7 @@ class PocketBaseConnection(ExperimentalBaseConnection[Client]):
         return _get_one(collection_id_or_name, record_id, query_params)
 
     def create(
-        self, collection_id_or_name, body_params={}, query_params={}, ttl=0
+            self, collection_id_or_name, body_params={}, query_params={}, ttl=0
     ) -> BaseModel:
         """
         Create a record in a collection.
@@ -200,7 +200,7 @@ class PocketBaseConnection(ExperimentalBaseConnection[Client]):
         return _create(collection_id_or_name, body_params, query_params)
 
     def update(
-        self, collection_id_or_name, record_id, body_params={}, query_params={}, ttl=0
+            self, collection_id_or_name, record_id, body_params={}, query_params={}, ttl=0
     ) -> BaseModel:
         """
         Update a record in a collection.
