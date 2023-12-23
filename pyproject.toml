@@ -10,6 +10,9 @@ authors = ["Ashwin <bsashwin9@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/Ashwin-op/st-pocketbase-connection"
+packages = [
+    { include = "pocketbase_connection.py", from = "." },
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
