@@ -26,6 +26,6 @@ pb_url = "http://127.0.0.1:8090"
 
 ## Demo
 
-You can see a demo of this app [here](https://pocketbase-connection.streamlit.app/).
+You can see a demo of this app [here](https://st-pocketbase-connection.streamlit.app/).
 
-[streamlit-app-2023-08-02-16-08-05.webm](https://github.com/Ashwin-op/pocketbase-connection/assets/60032753/ee89b16a-2c11-43d1-a92f-67d5ecfc2fc7)
+[streamlit-app-2023-08-02-16-08-05.webm](https://github.com/Ashwin-op/st-pocketbase-connection/assets/60032753/ee89b16a-2c11-43d1-a92f-67d5ecfc2fc7)
