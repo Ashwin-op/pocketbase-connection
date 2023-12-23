@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "st-pocketbase-connection"
-version = "0.2.0"
+version = "0.3.0"
 description = "Streamlit extension to access pocketbase"
 authors = ["Ashwin <bsashwin9@gmail.com>"]
 license = "MIT"
